@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Harconen Supply Co. — Global Procurement & Supply Chain</title>
+<meta name="description" content="Harconen Supply Co. — Global sourcing, logistics optimization, and procurement consulting for growing e-commerce brands."/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c; /* dark background default */
+    --card:#111214;
+    --muted:#9aa3b2;
+    --accent:#0f4b9d; /* deep blue */
+    --white:#ffffff;
+    --glass: rgba(255,255,255,0.03);
+    --radius:14px;
+    --max-width:1200px;
+    --gap:28px;
+  }
+
+  /* light mode vars */
+  [data-theme="light"]{
+    --bg:#f7f8fb;
+    --card:#ffffff;
+    --muted:#5b6770;
+    --accent:#0f4b9d;
+    --white:#0b0b0c;
+    --glass: rgba(11,11,12,0.03);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,var(--bg), #050506);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  .container{max-width:var(--max-width);margin:0 auto;padding:48px 24px;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:transparent;position:sticky;top:0;backdrop-filter: blur(6px);z-index:60}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:0.6px}
+  .brand .logo {
+    width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#04263f);display:inline-flex;align-items:center;justify-content:center;font-weight:900;color:white;font-size:16px;
+    box-shadow: 0 6px 18px rgba(15,75,157,0.12), inset 0 -2px 8px rgba(0,0,0,.25);
+  }
+
+  nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-weight:600}
+  .cta{background:var(--accent);color:var(--white);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow: 0 6px 20px rgba(15,75,157,.15);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:64vh;
+    border-radius:18px;
+    overflow:hidden;
+    margin: 28px 0;
+    display:flex;align-items:center;
+  }
+  .hero .media{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(2,6,12,0.35), rgba(2,6,12,0.6));
+    z-index:0;
+  }
+  .hero video, .hero img {width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) saturate(.95);}
+
+  .hero .content{
+    position:relative;z-index:2;padding:56px;max-width:920px;margin-left:48px;
+  }
+  .tagline{font-size:28px;font-weight:700;margin:0 0 8px 0;letter-spacing:0.2px}
+  .lead{font-size:44px;line-height:1.02;margin:8px 0 12px 0;font-weight:800}
+  .sub{color:var(--muted);max-width:650px;margin-bottom:20px;font-weight:400}
+
+  .hero .actions{display:flex;gap:12px;align-items:center}
+  .btn-primary{background:var(--accent);color:var(--white);padding:12px 20px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow: 0 10px 30px rgba(15,75,157,.12);transition:transform .18s ease, box-shadow .18s}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:10px;color:var(--white)}
+
+  /* Services */
+  .grid{display:grid;gap:var(--gap)}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:44px 0}
+  .card{background:var(--card);padding:20px;border-radius:14px;box-shadow: 0 6px 20px rgba(2,6,12,0.45);transition:transform .25s ease, box-shadow .25s; border:1px solid rgba(255,255,255,0.02)}
+  .card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(2,6,12,0.6)}
+  .card h4{margin:0 0 8px 0}
+  .card p{margin:0;color:var(--muted)}
+
+  /* Why / Mission / Testimonials */
+  .section {padding:28px;border-radius:12px;margin:28px 0}
+  .muted {color:var(--muted)}
+  .testimonials{display:flex;gap:20px;align-items:center}
+  .testimonial {background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:12px;min-width:280px}
+  .carousel{display:flex;gap:20px;overflow:hidden;padding:8px}
+
+  /* Contact & Footer */
+  .contact{display:grid;grid-template-columns:1fr 400px;gap:28px;margin-top:28px}
+  .form{background:var(--card);padding:20px;border-radius:12px}
+  label{display:block;margin-bottom:6px;font-weight:600}
+  input,textarea,select{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);resize:vertical}
+  button[type=submit]{margin-top:12px}
+
+  footer{margin-top:48px;padding:28px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center}
+  .social a{margin-left:12px;color:var(--muted);text-decoration:none}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero{min-height:56vh}
+    .hero .content{padding:28px;margin:0}
+    .lead{font-size:28px}
+    .contact{grid-template-columns:1fr}
+    nav a{display:none}
+  }
+
+  /* simple utility animations */
+  .fade-in{opacity:0;transform:translateY(8px);animation:fadeIn .9s forwards}
+  @keyframes fadeIn{to{opacity:1;transform:none}}
+
+  /* focus outlines for accessibility */
+  a:focus, button:focus, input:focus, select:focus {outline:3px solid rgba(15,75,157,0.16);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="container" role="banner">
+  <div class="brand">
+    <div class="logo" aria-hidden>H</div>
+    <div>
+      <div style="font-weight:800">Harconen</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:2px">Supply Co.</div>
+    </div>
+  </div>
+  <nav aria-label="Primary">
+    <a href="#services">Services</a>
+    <a href="#mission">Mission</a>
+    <a href="#cases">Case Studies</a>
+    <a class="cta" href="#contact">Book a Call</a>
+  </nav>
+
+  <div style="display:flex;gap:10px;align-items:center">
+    <button id="themeToggle" aria-label="Toggle theme" class="btn-ghost">Light</button>
+  </div>
+</header>
+
+<main class="container" role="main">
+  <section class="hero" aria-label="Hero">
+    <div class="media" aria-hidden>
+      <!-- Background video with fallback image. Replace 'VIDEO_SOURCE' with your video or use Pexels search suggestions below -->
+      <video id="bgVideo" autoplay muted loop playsinline poster="" style="width:100%;height:100%;">
+        <source src="" type="video/mp4">
+      </video>
+      <!-- fallback dark image -->
+      <img id="bgImage" src="" alt="" style="display:none" />
+    </div>
+
+    <div class="content fade-in">
+      <p class="tagline">Scaling together, every step of the way.</p>
+      <h1 class="lead">Global sourcing. Local trust.</h1>
+      <p class="sub">At Harconen Supply Co., we help e-commerce brands build stronger, smarter, and more secure supply chains. Whether you’re sourcing products, optimizing logistics, or scaling internationally — we’re your partner in every step forward.</p>
+      <div class="actions">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let’s Scale Together</button>
+        <a class="btn-ghost" href="#contact">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="container section" aria-labelledby="servicesHeading">
+    <h2 id="servicesHeading">Streamline. Simplify. Scale.</h2>
+    <p class="muted">We work with growing e-commerce and dropshipping brands to handle the complex world of sourcing, freight, and supplier management. Our goal is simple — help you grow faster, with less stress and more control.</p>
+
+    <div class="services" role="list">
+      <div class="card" role="listitem">
+        <h4>Product Sourcing</h4>
+        <p>Find verified, high-quality suppliers that match your specs and budgets.</p>
+      </div>
+      <div class="card" role="listitem">
+        <h4>Logistics Management</h4>
+        <p>Optimize freight routes, cut costs, and reduce delays with data-driven planning.</p>
+      </div>
+      <div class="card" role="listitem">
+        <h4>Supplier Relations</h4>
+        <p>We negotiate, manage, and monitor so you don’t have to — minimizing risk.</p>
+      </div>
+      <div class="card" role="listitem">
+        <h4>Procurement Consulting</h4>
+        <p>End-to-end strategy for scaling your operations across borders and markets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="container section">
+    <h3>Safe. Transparent. Reliable.</h3>
+    <p class="muted">Business can be unpredictable — but your supply chain shouldn’t be. At Harconen, we operate as your partner, not just your provider. You focus on building your brand; we make sure your backend runs flawlessly.</p>
+  </section>
+
+  <section id="mission" class="container section">
+    <h3>We believe in progress built on partnership.</h3>
+    <p class="muted">Harconen was founded on one promise — to make scaling feel safe, not scary. With every shipment, every supplier, and every decision, we move with purpose — helping you grow with confidence in a global market.</p>
+  </section>
+
+  <section id="cases" class="container section">
+    <h3>Testimonials</h3>
+    <div class="carousel" id="testCarousel" aria-live="polite">
+      <div class="testimonial card">
+        <p style="font-weight:700">“Harconen handled everything — sourcing, negotiation, and delivery. It’s like having a full supply chain team without the payroll.”</p>
+        <p class="muted" style="margin-top:8px">— Client Placeholder Name, Brand Owner</p>
+      </div>
+      <div class="testimonial card">
+        <p style="font-weight:700">“We saved 30% on freight costs in 2 months. But more than that, we gained peace of mind.”</p>
+        <p class="muted" style="margin-top:8px">— Client Placeholder Name, CEO of [Brand]</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container section contact" aria-labelledby="contactHeading">
+    <div>
+      <h3 id="contactHeading">Let’s build something global.</h3>
+      <p class="muted">Reach out today — whether you’re just starting out or already scaling, Harconen is ready to move with you.</p>
+      <ul style="color:var(--muted);margin-top:12px">
+        <li>📧 contact@harconen.co (example placeholder)</li>
+        <li>🌐 Serving global e-commerce & dropshipping brands</li>
+      </ul>
+    </div>
+
+    <form class="form" id="contactForm" novalidate>
+      <label for="name">Full name</label>
+      <input id="name" name="name" required placeholder="Jane Doe" />
+
+      <label for="company">Company</label>
+      <input id="company" name="company" placeholder="Your brand name" />
+
+      <label for="email">Company email</label>
+      <input id="email" type="email" name="email" required placeholder="team@brand.com" />
+
+      <label for="service">Service interest</label>
+      <select id="service" name="service">
+        <option>Product Sourcing</option>
+        <option>Logistics Management</option>
+        <option>Supplier Relations</option>
+        <option>Procurement Consulting</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..."></textarea>
+
+      <button class="btn-primary" type="submit">Book a Consultation</button>
+      <div id="formMsg" style="margin-top:12px;color:var(--muted);display:none"></div>
+    </form>
+  </section>
+
+  <footer class="container" role="contentinfo">
+    <div>
+      <strong>Harconen Supply Co.</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">© <span id="year"></span> Harconen Supply Co. All rights reserved.</div>
+    </div>
+    <div style="display:flex;align-items:center">
+      <nav style="margin-right:18px">
+        <a href="#services">Services</a> |
+        <a href="#mission">Mission</a>
+      </nav>
+      <div class="social" aria-hidden>
+        <a href="#" title="LinkedIn">LinkedIn</a>
+        <a href="#" title="Twitter">X</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // small JS: theme toggle, hero media fallback, simple form handler, carousel autoplay
+  (function(){
+    const root = document.documentElement;
+    const THEME_KEY = 'harconen_theme';
+    const toggle = document.getElementById('themeToggle');
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+
+    // init theme from localStorage or prefers-color-scheme
+    const stored = localStorage.getItem(THEME_KEY);
+    if(stored) document.documentElement.setAttribute('data-theme', stored);
+    else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme','light');
+
+    function updateToggleLabel(){
+      toggle.textContent = document.documentElement.getAttribute('data-theme') === 'light' ? 'Dark' : 'Light';
+    }
+    updateToggleLabel();
+
+    toggle.addEventListener('click', ()=>{
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? '' : 'light';
+      if(next) document.documentElement.setAttribute('data-theme', next);
+      else document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem(THEME_KEY, next || 'dark');
+      updateToggleLabel();
+    });
+
+    // hero media fallback: if no video source, show sample image
+    const video = document.getElementById('bgVideo');
+    const img = document.getElementById('bgImage');
+    // If you'd like to set a video, set video.src in Lovable or leave blank to use the fallback
+    const VIDEO_SRC = ""; // paste mp4 url if available
+    const FALLBACK_IMG = "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=example"; // replace with actual chosen image
+    if(VIDEO_SRC){
+      video.querySelector('source').src = VIDEO_SRC;
+      video.load();
+    } else {
+      video.style.display = 'none';
+      img.src = FALLBACK_IMG;
+      img.style.display = 'block';
+    }
+
+    // contact form (demo): validate & show success without backend
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if(!email || !/^\S+@\S+\.\S+$/.test(email)){
+        msg.style.display='block'; msg.textContent='Please enter a valid company email.';
+        return;
+      }
+      msg.style.display='block'; msg.textContent='Thanks — we received your request. We’ll email you to set up a consultation.';
+      form.reset();
+    });
+
+    // simple testimonial carousel auto-scroll
+    const carousel = document.getElementById('testCarousel');
+    let scrollPos = 0;
+    setInterval(()=>{
+      scrollPos += carousel.clientWidth;
+      if(scrollPos >= carousel.scrollWidth) scrollPos = 0;
+      carousel.scrollTo({left: scrollPos, behavior:'smooth'});
+    }, 4500);
+
+    // reveal animations
+    document.querySelectorAll('.fade-in').forEach((el, i)=>{
+      el.style.animationDelay = (i*120)+'ms';
+    });
+  })();
+</script>
+</body>
+</html>
