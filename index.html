@@ -9,25 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0b0b0c; /* dark background default */
+    --bg:#0b0b0c;
     --card:#111214;
     --muted:#9aa3b2;
-    --accent:#0f4b9d; /* deep blue */
+    --accent:#0f4b9d;
     --white:#ffffff;
     --glass: rgba(255,255,255,0.03);
     --radius:14px;
     --max-width:1200px;
     --gap:28px;
-  }
-
-  /* light mode vars */
-  [data-theme="light"]{
-    --bg:#f7f8fb;
-    --card:#ffffff;
-    --muted:#5b6770;
-    --accent:#0f4b9d;
-    --white:#0b0b0c;
-    --glass: rgba(11,11,12,0.03);
   }
 
   *{box-sizing:border-box}
@@ -138,27 +128,25 @@
     <a href="#cases">Case Studies</a>
     <a class="cta" href="#contact">Book a Call</a>
   </nav>
-
-  <div style="display:flex;gap:10px;align-items:center">
-    <button id="themeToggle" aria-label="Toggle theme" class="btn-ghost">Light</button>
-  </div>
 </header>
 
 <main class="container" role="main">
   <section class="hero" aria-label="Hero">
     <div class="media" aria-hidden>
-      <!-- Background video with fallback image. Replace 'VIDEO_SOURCE' with your video or use Pexels search suggestions below -->
       <video id="bgVideo" autoplay muted loop playsinline poster="" style="width:100%;height:100%;">
         <source src="" type="video/mp4">
       </video>
-      <!-- fallback dark image -->
       <img id="bgImage" src="" alt="" style="display:none" />
     </div>
 
     <div class="content fade-in">
-      <p class="tagline">Scaling together, every step of the way.</p>
-      <h1 class="lead">Global sourcing. Local trust.</h1>
-      <p class="sub">At Harconen Supply Co., we help e-commerce brands build stronger, smarter, and more secure supply chains. Whether you’re sourcing products, optimizing logistics, or scaling internationally — we’re your partner in every step forward.</p>
+      <p class="tagline">Structure over chaos.</p>
+      <h1 class="lead">Procurement & supply chain management for businesses that can’t afford mistakes.</h1>
+      <p class="sub">
+        Harconen Supply Co. helps businesses procure the right products, manage suppliers, control logistics, and reduce operational risk.
+        We ensure goods are delivered at the right place, at the right time, at the right price — with the right quality and accountability.
+      </p>
+
       <div class="actions">
         <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let’s Scale Together</button>
         <a class="btn-ghost" href="#contact">Book a Consultation</a>
@@ -167,26 +155,82 @@
   </section>
 
   <section id="services" class="container section" aria-labelledby="servicesHeading">
-    <h2 id="servicesHeading">Streamline. Simplify. Scale.</h2>
-    <p class="muted">We work with growing e-commerce and dropshipping brands to handle the complex world of sourcing, freight, and supplier management. Our goal is simple — help you grow faster, with less stress and more control.</p>
+    <h2 id="servicesHeading">What We Do</h2>
+    <p class="muted">
+      We help businesses regain control over procurement, suppliers, logistics, and costs.
+      No shortcuts. No guesswork. Just systems that work.
+    </p>
 
     <div class="services" role="list">
+
       <div class="card" role="listitem">
-        <h4>Product Sourcing</h4>
-        <p>Find verified, high-quality suppliers that match your specs and budgets.</p>
+        <h4>Procurement & Strategic Sourcing</h4>
+        <p>Reliable sourcing built on verification, leverage, and long-term value.</p>
+        <ul class="muted">
+          <li>Supplier identification & verification</li>
+          <li>Price benchmarking & cost analysis</li>
+          <li>Negotiation & contract setup</li>
+          <li>Factory audits & quality assurance</li>
+          <li>Supplier relationship management</li>
+        </ul>
       </div>
+
       <div class="card" role="listitem">
-        <h4>Logistics Management</h4>
-        <p>Optimize freight routes, cut costs, and reduce delays with data-driven planning.</p>
+        <h4>Logistics & Delivery Management</h4>
+        <p>End-to-end coordination to reduce delays, damage, and unnecessary spend.</p>
+        <ul class="muted">
+          <li>Freight forwarding coordination</li>
+          <li>Customs & import/export documentation</li>
+          <li>Shipment tracking & visibility dashboards</li>
+          <li>Packaging, warehousing & fulfillment optimization</li>
+        </ul>
       </div>
+
       <div class="card" role="listitem">
-        <h4>Supplier Relations</h4>
-        <p>We negotiate, manage, and monitor so you don’t have to — minimizing risk.</p>
+        <h4>Supplier Performance & Risk Control</h4>
+        <p>We put structure where chaos usually lives.</p>
+        <ul class="muted">
+          <li>Supplier scorecards & KPIs</li>
+          <li>SLAs & escalation frameworks</li>
+          <li>Quality failures & dispute handling</li>
+          <li>Supply risk identification & mitigation</li>
+        </ul>
       </div>
+
       <div class="card" role="listitem">
-        <h4>Procurement Consulting</h4>
-        <p>End-to-end strategy for scaling your operations across borders and markets.</p>
+        <h4>Automation & AI Assistance</h4>
+        <p>Smart automation that saves time, reduces errors, and improves visibility.</p>
+        <ul class="muted">
+          <li>Workflow & process automation</li>
+          <li>AI-driven sourcing & supplier research</li>
+          <li>Invoicing, reporting & document automation</li>
+          <li>Integration with data & dashboard tools</li>
+        </ul>
       </div>
+
+      <div class="card" role="listitem">
+        <h4>Consulting & Advisory</h4>
+        <p>Strategic guidance for businesses scaling across markets and borders.</p>
+        <ul class="muted">
+          <li>Supply chain strategy development</li>
+          <li>Sustainability & ESG compliance audits</li>
+          <li>Risk management & cost optimization plans</li>
+          <li>Vendor audits & performance reviews</li>
+          <li>Procurement policy creation & training</li>
+        </ul>
+      </div>
+
+      <div class="card" role="listitem">
+        <h4>Contract & Financial Management</h4>
+        <p>Financial clarity and contract control across your supply chain.</p>
+        <ul class="muted">
+          <li>Drafting & reviewing supply contracts</li>
+          <li>Vendor payment schedules & reconciliations</li>
+          <li>Financial tracking & spend dashboards</li>
+          <li>Invoice management & dispute resolution</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -219,7 +263,7 @@
       <h3 id="contactHeading">Let’s build something global.</h3>
       <p class="muted">Reach out today — whether you’re just starting out or already scaling, Harconen is ready to move with you.</p>
       <ul style="color:var(--muted);margin-top:12px">
-        <li>📧 contact@harconen.co (example placeholder)</li>
+        <li>📧 support@harconen.com</li>
         <li>🌐 Serving global e-commerce & dropshipping brands</li>
       </ul>
     </div>
@@ -232,7 +276,7 @@
       <input id="company" name="company" placeholder="Your brand name" />
 
       <label for="email">Company email</label>
-      <input id="email" type="email" name="email" required placeholder="team@brand.com" />
+      <input id="email" type="email" name="email" required placeholder="osi@harconen.com" />
 
       <label for="service">Service interest</label>
       <select id="service" name="service">
@@ -268,39 +312,15 @@
 </main>
 
 <script>
-  // small JS: theme toggle, hero media fallback, simple form handler, carousel autoplay
   (function(){
-    const root = document.documentElement;
-    const THEME_KEY = 'harconen_theme';
-    const toggle = document.getElementById('themeToggle');
     const yearEl = document.getElementById('year');
     yearEl.textContent = new Date().getFullYear();
 
-    // init theme from localStorage or prefers-color-scheme
-    const stored = localStorage.getItem(THEME_KEY);
-    if(stored) document.documentElement.setAttribute('data-theme', stored);
-    else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme','light');
-
-    function updateToggleLabel(){
-      toggle.textContent = document.documentElement.getAttribute('data-theme') === 'light' ? 'Dark' : 'Light';
-    }
-    updateToggleLabel();
-
-    toggle.addEventListener('click', ()=>{
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'light' ? '' : 'light';
-      if(next) document.documentElement.setAttribute('data-theme', next);
-      else document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem(THEME_KEY, next || 'dark');
-      updateToggleLabel();
-    });
-
-    // hero media fallback: if no video source, show sample image
+    // hero media fallback
     const video = document.getElementById('bgVideo');
     const img = document.getElementById('bgImage');
-    // If you'd like to set a video, set video.src in Lovable or leave blank to use the fallback
-    const VIDEO_SRC = ""; // paste mp4 url if available
-    const FALLBACK_IMG = "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=example"; // replace with actual chosen image
+    const VIDEO_SRC = "";
+    const FALLBACK_IMG = "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=example";
     if(VIDEO_SRC){
       video.querySelector('source').src = VIDEO_SRC;
       video.load();
@@ -310,7 +330,7 @@
       img.style.display = 'block';
     }
 
-    // contact form (demo): validate & show success without backend
+    // contact form demo
     const form = document.getElementById('contactForm');
     const msg = document.getElementById('formMsg');
     form.addEventListener('submit', (e)=>{
