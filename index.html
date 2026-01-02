@@ -57,7 +57,7 @@
     background:linear-gradient(180deg, rgba(2,6,12,0.35), rgba(2,6,12,0.6));
     z-index:0;
   }
-  ..hero video, .hero img {
+.hero video, .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -396,17 +396,14 @@
     yearEl.textContent = new Date().getFullYear();
 
     // hero media fallback
-    const video = document.getElementById('bgVideo');
-    const img = document.getElementById('bgImage');
-    const VIDEO_SRC = "";
-   const FALLBACK_IMG = "assets/warehouse.jpeg";
-      video.querySelector('source').src = VIDEO_SRC;
-      video.load();
-    } else {
-      video.style.display = 'none';
-      img.src = FALLBACK_IMG;
-      img.style.display = 'block';
-    }
+  const video = document.getElementById('bgVideo');
+const img = document.getElementById('bgImage');
+const FALLBACK_IMG = "assets/warehouse.jpeg";
+
+// hide video, show image
+video.style.display = 'none';
+img.src = FALLBACK_IMG;
+img.style.display = 'block';
 
     // contact form demo
     const form = document.getElementById('contactForm');
