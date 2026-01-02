@@ -393,8 +393,7 @@
     const video = document.getElementById('bgVideo');
     const img = document.getElementById('bgImage');
     const VIDEO_SRC = "";
-    const FALLBACK_IMG = "https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=example";
-    if(VIDEO_SRC){
+   const FALLBACK_IMG = "assets/warehouse.jpeg";
       video.querySelector('source').src = VIDEO_SRC;
       video.load();
     } else {
