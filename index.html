@@ -78,6 +78,15 @@
   .card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(2,6,12,0.6)}
   .card h4{margin:0 0 8px 0}
   .card p{margin:0;color:var(--muted)}
+  .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
 
   /* Why / Mission / Testimonials */
   .section {padding:28px;border-radius:12px;margin:28px 0}
@@ -129,7 +138,7 @@
   <nav aria-label="Primary">
     <a href="#services">Services</a>
     <a href="#mission">Mission</a>
-    <a href="#cases">Case Studies</a>
+   <a href="#about">About</a>
     <a class="cta" href="#contact">Book a Call</a>
   </nav>
 </header>
@@ -148,7 +157,7 @@
       <h1 class="lead">Your supply chain simplified.</h1>
       <p class="sub">
         Harconen Supply Co. helps businesses procure the right products, manage suppliers, control logistics, and reduce operational risk.
-        We ensure goods are delivered at the right place, at the right time, at the right price, with the right quality and accountability. We handle the complex back end so you focus on what really matters
+        We ensure goods are delivered at the right place, at the right time, at the right price, with the right quality and accountability. We handle the complex back end, so you focus on what really matters
       </p>
 
       <div class="actions">
@@ -160,7 +169,7 @@
 
     <section id="services" class="container section" aria-labelledby="servicesHeading">
     <h2 id="servicesHeading">Streamline. Simplify. Scale.</h2>
-    <p class="muted">We work with growing e-commerce and dropshipping brands to handle the complex world of sourcing, freight, and supplier management. Our goal is simple — help you grow faster, with less stress and more control.</p>
+    <p class="muted">We help businesses regain control over procurement, suppliers, logistics, and costs. No shortcuts. No guesswork. Just systems that work. Our goal is simple; help you grow faster, with less stress and more control.</p>
     <div class="services" role="list">
 
 
@@ -240,12 +249,11 @@
 <script>
   // Accordion toggle logic
   document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      const isVisible = content.style.display === 'block';
-      content.style.display = isVisible ? 'none' : 'block';
-    });
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    content.classList.toggle('open');
   });
+});
 </script>
 
 
@@ -259,10 +267,10 @@
 
   <section id="mission" class="container section">
     <h3>We believe in progress built on partnership.</h3>
-    <p class="muted">Harconen was founded on one promise — to make scaling feel safe, not scary. With every shipment, every supplier, and every decision, we move with purpose — helping you grow with confidence in a global market.</p>
+    <p class="muted">Harconen was founded on one promise — to make scaling feel safe, not scary. With every shipment, every supplier, and every decision, we move with purpose, helping you grow with confidence in a global market.</p>
   </section>
 
-  <section id="why-us" class="container section" aria-labelledby="whyUsHeading">
+ <section id="about" class="container section" aria-labelledby="whyUsHeading">
   <h3 id="whyUsHeading">Why Companies Work With Us</h3>
   <p class="muted" style="max-width:720px">
     Most supply chain problems don’t come from bad intentions, they come from
@@ -275,7 +283,7 @@
       <h4>We Reduce Risk, Not Just Costs</h4>
       <p class="muted">
         Anyone can chase the cheapest supplier. We focus on reliability,
-        accountability, and long-term stability so your business doesn’t break
+        accountability, and long term stability so your business doesn’t break
         under pressure.
       </p>
     </div>
@@ -291,8 +299,8 @@
     <div class="card" role="listitem">
       <h4>End-to-End Ownership</h4>
       <p class="muted">
-        From sourcing and negotiation to logistics and delivery — we stay
-        accountable at every step. No hand-offs. No excuses.
+        From sourcing and negotiation to logistics and delivery, we stay
+        accountable at every step. No hand offs. No excuses.
       </p>
     </div>
 
@@ -315,7 +323,7 @@
     <div class="card" role="listitem">
       <h4>We Act Like Partners, Not Vendors</h4>
       <p class="muted">
-        Your supply chain is mission-critical. We operate as an extension of
+        Your supply chain is mission critical. We operate as an extension of
         your business, not a detached service provider.
       </p>
     </div>
@@ -326,7 +334,7 @@
   <section id="contact" class="container section contact" aria-labelledby="contactHeading">
     <div>
       <h3 id="contactHeading">Let’s build something global.</h3>
-      <p class="muted">Reach out today — whether you’re just starting out or already scaling, Harconen is ready to move with you.</p>
+      <p class="muted">Reach out today!!! Whether you’re just starting out or already scaling, Harconen is ready to move with you.</p>
       <ul style="color:var(--muted);margin-top:12px">
         <li>📧 support@harconen.com</li>
         <li>🌐 End-to-end procurement & supply chain support worldwide</li>
