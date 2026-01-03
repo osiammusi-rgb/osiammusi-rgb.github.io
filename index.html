@@ -7,7 +7,32 @@
 <meta name="description" content="Harconen Supply Co. — Global sourcing, logistics optimization, and procurement consulting for growing e-commerce brands."/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-<style>
+/* === Services Accordion (Vertical & Smooth) === */
+
+#services .services {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 0;
+  padding-left: 16px;
+}
+
+.card.active .accordion-content {
+  max-height: 500px; /* enough room for content */
+  opacity: 1;
+  margin-top: 10px;
+}
+  <style>
   :root{
     --bg:#0b0b0c;
     --card:#111214;
@@ -173,18 +198,14 @@
     </div>
   </section>
 
-    <section id="services" class="container section" aria-labelledby="servicesHeading">
-    <h2 id="servicesHeading">Streamline. Simplify. Scale.</h2>
-    <p class="muted">We help businesses regain control over procurement, suppliers, logistics, and costs. No shortcuts. No guesswork. Just systems that work. Our goal is simple; help you grow faster, with less stress and more control.</p>
-    <div class="services" role="list">
-
+ <section id="services" class="container section" aria-labelledby="servicesHeading">
+  <h2 id="servicesHeading">Streamline. Simplify. Scale.</h2>
+  <p class="muted">We work with growing e-commerce and dropshipping brands to handle the complex world of sourcing, freight, and supplier management. Our goal is simple — help you grow faster, with less stress and more control.</p>
 
   <div class="services" role="list">
-
-    <!-- Procurement & Strategic Sourcing -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Procurement & Strategic Sourcing</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Procurement & Strategic Sourcing</h4>
+      <ul class="accordion-content muted">
         <li>Supplier identification & verification</li>
         <li>Price benchmarking & cost analysis</li>
         <li>Negotiation & contract setup</li>
@@ -193,10 +214,9 @@
       </ul>
     </div>
 
-    <!-- Logistics & Delivery Management -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Logistics & Delivery Management</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Logistics & Delivery Management</h4>
+      <ul class="accordion-content muted">
         <li>Freight forwarding coordination</li>
         <li>Customs & import/export documentation</li>
         <li>Shipment tracking & visibility dashboards</li>
@@ -204,10 +224,9 @@
       </ul>
     </div>
 
-    <!-- Supplier Performance & Risk Control -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Supplier Performance & Risk Control</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Supplier Performance & Risk Control</h4>
+      <ul class="accordion-content muted">
         <li>Supplier scorecards & KPIs</li>
         <li>SLAs & escalation frameworks</li>
         <li>Quality failures & dispute handling</li>
@@ -215,10 +234,9 @@
       </ul>
     </div>
 
-    <!-- Automation & AI Assistance -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Automation & AI Assistance</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Automation & AI Assistance</h4>
+      <ul class="accordion-content muted">
         <li>Workflow & process automation</li>
         <li>AI-driven sourcing & supplier research</li>
         <li>Invoicing, reporting & document automation</li>
@@ -226,10 +244,9 @@
       </ul>
     </div>
 
-    <!-- Consulting & Advisory -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Consulting & Advisory</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Consulting & Advisory</h4>
+      <ul class="accordion-content muted">
         <li>Supply chain strategy development</li>
         <li>Sustainability & ESG compliance audits</li>
         <li>Risk management & cost optimization plans</li>
@@ -238,29 +255,34 @@
       </ul>
     </div>
 
-    <!-- Contract & Financial Management -->
-    <div class="card" role="listitem">
-      <h4 class="accordion-header" style="cursor:pointer;">Contract & Financial Management</h4>
-      <ul class="accordion-content muted" style="display:none; margin-top:8px;">
+    <div class="card">
+      <h4 class="accordion-header">Contract & Financial Management</h4>
+      <ul class="accordion-content muted">
         <li>Drafting & reviewing supply contracts</li>
         <li>Vendor payment schedules & reconciliations</li>
         <li>Financial tracking & spend dashboards</li>
         <li>Invoice management & dispute resolution</li>
       </ul>
     </div>
-
   </div>
 </section>
 
 <script>
-  // Accordion toggle logic
   document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-    content.classList.toggle('open');
+    header.addEventListener('click', () => {
+      const card = header.parentElement;
+
+      // close all other cards
+      document.querySelectorAll('.card').forEach(c => {
+        if (c !== card) c.classList.remove('active');
+      });
+
+      // toggle this one
+      card.classList.toggle('active');
+    });
   });
-});
 </script>
+ 
 
 
     </div>
